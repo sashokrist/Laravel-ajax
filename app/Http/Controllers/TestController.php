@@ -16,7 +16,9 @@ class TestController extends Controller
       //  dd($request->all());
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required'
+            'email' => 'required',
+            'mobile_number' => 'required',
+            'message' => 'min:10'
         ]);
         $data =  $request->all();
 
