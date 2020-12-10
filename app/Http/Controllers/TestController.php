@@ -20,9 +20,14 @@ class TestController extends Controller
             'mobile_number' => 'required',
             'message' => 'min:10'
         ]);
-        $data =  $request->all();
+        $data =  [
+            $users['name'] = $request->name,
+            $users['email'] = $request->email,
+            $users['mobile_number'] = $request->mobile_number,
+            $users['message'] = $request->message,
 
-       return response()->json($data);
+        ];
+       return response()->json($users);
        // return json_encode(array('data'=>$userData));
     }
 

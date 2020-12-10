@@ -42,17 +42,21 @@
                     url: "{{ route('posts-store') }}",
                     type: "POST",
                     data: $('#ajaxform').serialize(),
-                    success: function (response) {
-                        console.log(response);
-                        if (response) {
-                            $('.success').text(response.success);
+                    success: function (users) {
+                        console.log(users);
+                        if (users) {
+                            $('.success').text(users.success);
                             $("#ajaxform")[0].reset();
-                            $('#result').html([
-                                '<div class="content"> Name: ', response.name, '</div>',
-                                '<div class="content"> Email: ', response.email, '</div>',
-                                '<div class="content"> Phone: ', response.mobile_number, '</div>',
-                                '<div class="content"> Message: ', response.message, '</div>',
-                            ]);
+                           /* $('#result').html([
+                                '<div class="content"> Name: ', users['name'], '</div>',
+                               '<div class="content"> Email: ', users['email'], '</div>',
+                                '<div class="content"> Phone: ', users['mobile_number'], '</div>',
+                                '<div class="content"> Message: ', users['message'], '</div>',
+                            ]);*/
+                            $.each(users, function (key, value) {
+                                $('#result').append('<div class="col-5">' + key + ', ' + value + '</div>');
+                            });
+                            $('#result').append('<br><hr>');
                         }
                         $('#del').show();
                         $('#result').show();
