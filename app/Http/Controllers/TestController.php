@@ -21,10 +21,10 @@ class TestController extends Controller
             'message' => 'min:10'
         ]);
         $data =  [
-            $users['name'] = $request->name,
-            $users['email'] = $request->email,
-            $users['mobile_number'] = $request->mobile_number,
-            $users['message'] = $request->message,
+            $users['Name'] = $request->name,
+            $users['Email'] = $request->email,
+            $users['Mobile_number'] = $request->mobile_number,
+            $users['Message'] = $request->message,
 
         ];
        return response()->json($users);

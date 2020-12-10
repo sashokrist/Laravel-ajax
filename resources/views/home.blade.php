@@ -54,7 +54,7 @@
                                 '<div class="content"> Message: ', users['message'], '</div>',
                             ]);*/
                             $.each(users, function (key, value) {
-                                $('#result').append('<div class="col-5">' + key + ', ' + value + '</div>');
+                                $('#result').append('<div class="col-10">' + key + ' : ' + value + '</div>');
                             });
                             $('#result').append('<br><hr>');
                         }
