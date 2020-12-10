@@ -27,10 +27,10 @@
             </div>
         </form>
         <div id="result"></div>
-        <button class="btn btn-danger" id="del" style="display: none">Delete</button
+        <button class="btn btn-danger" id="del" style="display: none">Delete</button>
     </div>
     <script>
-    $(document).ready(function (e){
+    $(document).ready(function (){
         $(".save-data").click(function(event){
             event.preventDefault();
             $.ajaxSetup({
